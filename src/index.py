@@ -43,7 +43,7 @@ async def convert(ctx, currency, destination, quantity):
     currency1Eur = float(1/response['rates'][currency])
     destination1Eur = float(1/response['rates'][destination])
     total = currency1Eur / destination1Eur * float(quantity)
-    await ctx.send('{}{} -> {}{}'.format(quantity, currency, total, destination))
+    await ctx.send('{}{} -> {}{}'.format(quantity, currency, round(total, 2), destination))
 
    
 @bot.command() 
