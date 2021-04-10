@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-bot = commands.Bot(command_prefix='<', description="El bot Stonks")
+bot = commands.Bot(command_prefix='<', description="El bot Stonks", , help_command=None)
 #You must add your api key from https://fixer.io/
 currency_api_key = ''
 
@@ -44,6 +44,11 @@ async def convert(ctx, currency, destination, quantity):
     destination1Eur = float(1/response['rates'][destination])
     total = currency1Eur / destination1Eur * float(quantity)
     await ctx.send('{}{} -> {}{}'.format(quantity, currency, round(total), destination))
+
+   
+@bot.command() 
+async def help(context):
+    await context.send("commad available: \n <ping \n <price (cryptocurrency) \n <currency (currency) EUR --> Currency  \n <convert (currency) (destination currency) (quantity) Currency --> Destination Currency")
 
 
 
