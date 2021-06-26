@@ -6,9 +6,10 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-bot = commands.Bot(command_prefix='<', description="El bot Stonks", help_command=None)
 #You must add your api key from https://fixer.io/
 currency_api_key = ''
+
+bot = commands.Bot(command_prefix='<', description="El bot Stonks", help_command=None)
 
 @bot.command()
 async def ping(ctx):
